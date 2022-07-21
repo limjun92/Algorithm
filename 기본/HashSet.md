@@ -22,12 +22,10 @@ public class test{
 
 * set to array
 
-```
-
+```java
 Integer[] arr = set.toArray(new Integer[0]);
 
 Set 객체의 toArray() 메소드를 이용하면, Set 객체를 배열로 변환할 수 있습니다.
 파라미터로는, 변환될 배열 객체를 넘겨주면 되는데,
 이때 배열의 크기를 0으로 지정하면 자동으로 배열의 크기가 지정됩니다.
-
 ```
