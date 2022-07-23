@@ -1,4 +1,10 @@
 * 리스트 정렬
+
+```java
+list.add("tmp")
+list.get(0)
+```
+
 ```java 
 
 //오름차순
