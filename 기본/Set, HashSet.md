@@ -2,14 +2,20 @@
 * 중복 허용안함
 * 순서 제공안함
 
+----------
+
 ## Collection
 * HashSet 중복해서 저장하지 안음
 * LinkedhashSet 집합의 특징인 중복을 허용하면서 순서를 가진다.
 
+----------
+
 ## Map 
 * HashMap : key-value를 사용
 * HashTable : HashMap과 동일하지만 Thread-Safe하여 동기화 지원
-* LinkedHashMap : 수서를 가진다.
+* LinkedHashMap : 순서를 가진다.
+
+----------
 
 ```java
 import java.util.Set;
