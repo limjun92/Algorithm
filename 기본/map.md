@@ -1,3 +1,11 @@
+----------
+
+## Map 
+* HashMap : key-value를 사용
+* HashTable : HashMap과 동일하지만 Thread-Safe하여 동기화 지원
+* LinkedHashMap : 순서를 가진다.
+
+
 ```java
 
 import java.util.HashMap;
