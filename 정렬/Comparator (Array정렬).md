@@ -8,3 +8,7 @@ Arrays.sort(arr, new Comparator<String>() {
   }
 });
 ```    
+
+
+```java
+Arrays.sort(arr, (a,b) -> {return (b+a).compareTo(a+b)
