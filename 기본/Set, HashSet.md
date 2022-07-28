@@ -8,9 +8,13 @@
 * HashSet 중복해서 저장하지 안음
 * LinkedhashSet 집합의 특징인 중복을 허용하면서 순서를 가진다.
 
-
-
 ----------
+
+### method
+
+* size()
+* add()
+
 
 ```java
 import java.util.Set;
