@@ -1,1 +1,65 @@
+import java.util.*;
 
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int V = sc.nextInt();
+		int E = sc.nextInt();
+		
+		int k = sc.nextInt();
+		
+		ArrayList<Node>[] lists = new ArrayList[V+1];
+		
+		for(int i = 1;i<V+1;i++) {
+			lists[i] = new ArrayList<>();
+		}
+		
+		for(int i = 0;i<E;i++) {
+			int u = sc.nextInt();
+			int v = sc.nextInt();
+			int w = sc.nextInt();
+			lists[u].add(new Node(v, w));
+		}
+		
+		boolean[] check = new boolean[V+1];
+		int[] result = new int[V+1];
+		
+		PriorityQueue<Node> q = new PriorityQueue<>();
+		
+		q.add(new Node(k, 0));
+		
+		while(!q.isEmpty()) {
+			Node tmp = q.poll();
+			if(check[tmp.v])
+				continue;
+			check[tmp.v] = true;
+			result[tmp.v] =  tmp.w;
+			for(int i = 0;i<lists[tmp.v].size();i++) {
+				int nv = lists[tmp.v].get(i).v;
+				int nw = lists[tmp.v].get(i).w;
+				q.add(new Node(nv, nw + tmp.w));
+			}
+		}
+		
+		for(int i = 1;i<V+1;i++) {
+			if(i!=k && result[i] == 0)
+				System.out.println("INF");
+			else
+				System.out.println(result[i]);
+		}
+	}
+	static class Node implements Comparable<Node>{
+		int v, w;
+		Node(int v, int w){
+			this.v = v;
+			this.w = w;
+		}
+		@Override
+		public int compareTo(Node node) {
+			if(this.w > node.w)
+				return 1;
+			return -1;
+		}
+	}
+}
